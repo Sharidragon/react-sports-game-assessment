@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Game from './components/game/Game';
+import DragonPick from './assets/images/Dragon.jpg';
+import Freedom from './assets/images/Freedom.gif';
+import Bananas from './assets/images/Bananas.jpg';
+import Peanuts from './assets/images/Peanuts.jpg';
 
-function App() {
+function App(props) {
+  const dragon = {
+      name: 'Dragon',
+      logoSrc: DragonPick
+  }
+  const freedom = {
+      name: 'Freedom',
+      logoSrc: Freedom
+  }
+  const peanuts = {
+      name: 'Peanuts',
+      logoSrc: Peanuts
+  }
+  const bananas = {
+      name: 'Bananas',
+      logoSrc: Bananas
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <Game 
+          venue="The Playground"
+          homeTeam={dragon}
+          visitingTeam={freedom} 
+          />
+          <Game 
+          venue="Keenesburg" 
+          homeTeam={peanuts}
+          visitingTeam={bananas}/>            
     </div>
-  );
+  )
 }
 
 export default App;
